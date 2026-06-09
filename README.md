@@ -5,6 +5,7 @@ This repository contains the legal documents related to the GP Weekends iOS appl
 ## Documents
 
 * [Privacy Policy](./PRIVACY.html)
+* [Support](./SUPPORT.html)
 
 ## Application
 
