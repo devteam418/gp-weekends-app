@@ -24,7 +24,7 @@ Suggestions and feature requests are welcome through GitHub Issues.
 
 For support requests or questions regarding GP Weekends, you may also contact the developer at:
 
-[tumbler.sony@icloud.com](mailto:tumbler.sony@icloud.com)
+[gp-week-end-support](mailto:tumbler.sony@icloud.com)
 
 ## About GP Weekends
 
