@@ -1,0 +1,41 @@
+site_name: GP Weekends
+site_url: https://devteam418.github.io/gp-weekends-app/
+site_description: An unofficial motorsport companion application for F1 and MotoGP.
+
+theme:
+  name: material
+  palette:
+    # Light Mode Configuration
+    - scheme: default
+      primary: white
+      accent: pink
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark Mode Configuration
+    - scheme: slate
+      primary: black
+      accent: pink
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+
+extra_css:
+  - extra.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+nav:
+  - Overview: index.md
+  - Privacy Policy: privacy.md
+  - Technical Support: support.md

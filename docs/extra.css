@@ -1,0 +1,280 @@
+/* GP Weekends - Custom Neon Cyberpunk Theme with dynamic Light/Dark Mode */
+
+/* -------------------------------------------------------------
+   1. COLOR VARIABLE DEFINITIONS BY SCHEME
+   ------------------------------------------------------------- */
+
+/* Default Light Mode Styles */
+:root, [data-md-color-scheme="default"] {
+  --neon-pink: #d81b60; /* Darker pink for better contrast on white background */
+  --neon-cyan: #00acc1; /* Darker cyan for contrast */
+  --neon-lime: #43a047; /* Darker lime green */
+  --neon-purple: #8e24aa;
+  
+  /* Interface Gradients & Backgrounds */
+  --bg-gradient: radial-gradient(circle at 50% 30%, #ffffff 0%, #f1f3f7 85%);
+  --header-bg: rgba(255, 255, 255, 0.95);
+  --header-border: var(--neon-pink);
+  --shadow-color: rgba(216, 27, 96, 0.12);
+  --text-shadow: none;
+  --caption-color: #555c7a;
+  
+  /* Sub-elements */
+  --code-bg: #f8f9fa;
+  --code-border: rgba(67, 160, 71, 0.3);
+  --blockquote-bg: rgba(142, 36, 170, 0.05);
+  
+  /* Screenshot Mockups */
+  --img-border: 2px solid var(--neon-pink);
+  --img-shadow: 0 4px 15px rgba(216, 27, 96, 0.15);
+  --img-hover-border: var(--neon-cyan);
+  --img-hover-shadow: 0 10px 25px rgba(0, 172, 193, 0.3);
+}
+
+/* Slate Dark Mode Styles */
+[data-md-color-scheme="slate"] {
+  --neon-pink: #ff1f7a;
+  --neon-cyan: #00e0ff;
+  --neon-lime: #8fff14;
+  --neon-purple: #9d00ff;
+  
+  /* Interface Gradients & Backgrounds */
+  --bg-gradient: radial-gradient(circle at 50% 30%, #0d0f1a 0%, #050608 85%);
+  --header-bg: rgba(8, 9, 13, 0.9);
+  --header-border: var(--neon-cyan);
+  --shadow-color: rgba(0, 224, 255, 0.3);
+  --text-shadow: 0 0 10px rgba(255, 31, 122, 0.5);
+  --caption-color: var(--neon-cyan);
+  
+  /* Sub-elements */
+  --code-bg: #0b0c12;
+  --code-border: rgba(143, 255, 20, 0.3);
+  --blockquote-bg: rgba(157, 0, 255, 0.03);
+  
+  /* Screenshot Mockups */
+  --img-border: 3px double var(--neon-pink);
+  --img-shadow: 0 0 25px rgba(255, 31, 122, 0.3), inset 0 0 10px rgba(255, 31, 122, 0.2);
+  --img-hover-border: var(--neon-cyan);
+  --img-hover-shadow: 0 12px 35px rgba(0, 224, 255, 0.5), inset 0 0 15px rgba(0, 224, 255, 0.3);
+}
+
+/* -------------------------------------------------------------
+   2. REACTIVE INTERFACE RENDERING
+   ------------------------------------------------------------- */
+
+/* Body background gradient */
+body, html, .md-container, .md-main {
+  background: var(--bg-gradient) !important;
+  background-attachment: fixed !important;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Header toolbar and blur effects */
+.md-header {
+  background-color: var(--header-bg) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--header-border) !important;
+  box-shadow: 0 0 15px var(--shadow-color) !important;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Sidebar and active menu navigation */
+.md-nav__link--active, .md-nav__link:hover {
+  color: var(--neon-pink) !important;
+  text-shadow: var(--text-shadow);
+}
+
+.md-nav__title {
+  color: var(--neon-cyan) !important;
+  font-weight: bold;
+}
+
+/* Neon glow typography */
+h1 {
+  color: var(--neon-pink) !important;
+  text-shadow: var(--text-shadow);
+  font-weight: 800 !important;
+  border-bottom: 2px solid var(--neon-pink) !important;
+  box-shadow: 0 4px 10px -10px var(--neon-pink) !important;
+  padding-bottom: 12px;
+  margin-top: 2em !important;
+  transition: all 0.3s ease-in-out;
+}
+
+h2 {
+  color: var(--neon-cyan) !important;
+  text-shadow: var(--text-shadow);
+  font-weight: 700 !important;
+  border-bottom: 1px solid rgba(0, 224, 255, 0.3) !important;
+  padding-bottom: 8px;
+  margin-top: 1.8em !important;
+  transition: all 0.3s ease-in-out;
+}
+
+h3 {
+  color: var(--neon-lime) !important;
+  font-weight: 600 !important;
+  margin-top: 1.5em !important;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Cyberpunk style hyperlink hovers */
+article a {
+  color: var(--neon-cyan) !important;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px dashed var(--neon-cyan);
+  transition: all 0.2s ease-in-out;
+}
+
+article a:hover {
+  color: var(--neon-pink) !important;
+  border-bottom: 1px solid var(--neon-pink);
+  text-shadow: var(--text-shadow);
+}
+
+/* -------------------------------------------------------------
+   3. ADMONITIONS & BLOCKQUOTES (CLEAN AND STREAMLINED)
+   ------------------------------------------------------------- */
+
+/* Clean standard admonition panels */
+.md-typeset .admonition {
+  background-color: var(--code-bg) !important;
+  border: 1px solid rgba(0, 224, 255, 0.15) !important;
+  border-left: 4px solid var(--neon-cyan) !important;
+  border-radius: 6px !important;
+  padding: 16px 20px !important;
+  margin-bottom: 24px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.md-typeset .admonition-title {
+  background-color: rgba(0, 224, 255, 0.03) !important;
+  color: var(--neon-cyan) !important;
+  border-bottom: 1px solid rgba(0, 224, 255, 0.08) !important;
+  font-weight: bold;
+}
+
+/* Blockquotes with neon violet accent bar */
+blockquote {
+  border-left: 4px solid var(--neon-purple) !important;
+  background-color: var(--blockquote-bg) !important;
+  color: var(--md-default-fg-color) !important;
+  font-style: normal !important;
+  padding: 12px 18px !important;
+  border-radius: 0 8px 8px 0 !important;
+  margin: 1.5em 0 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* -------------------------------------------------------------
+   4. INTERACTIVE IMAGES (SCREENSHOTS HIGHLIGHTING)
+   ------------------------------------------------------------- */
+
+/* Phone screenshot containers with dual scheme responsive glows */
+.md-typeset img {
+  border: var(--img-border) !important;
+  box-shadow: var(--img-shadow) !important;
+  outline: 1px solid rgba(255, 31, 122, 0.2) !important;
+  border-radius: 14px !important;
+  margin: 28px auto !important;
+  display: block !important;
+  background-color: #000 !important;
+  max-width: 280px !important;
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* Interactive hover zoom, border color transition, and custom neon glow */
+.md-typeset img:hover {
+  transform: translateY(-5px) scale(1.04);
+  border-color: var(--img-hover-border) !important;
+  outline-color: rgba(0, 224, 255, 0.4) !important;
+  box-shadow: var(--img-hover-shadow) !important;
+  cursor: zoom-in;
+}
+
+/* Captions responsive colors */
+.img-caption {
+  text-align: center;
+  font-size: 0.85em;
+  color: var(--caption-color) !important;
+  font-style: italic;
+  margin-top: -16px;
+  margin-bottom: 24px;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Inline code highlight */
+.md-typeset code {
+  background-color: var(--code-bg) !important;
+  color: var(--neon-lime) !important;
+  border: 1px solid var(--code-border) !important;
+  border-radius: 5px;
+  padding: 2px 6px !important;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Codeblock panel */
+.md-typeset pre code {
+  border: 1px solid rgba(0, 224, 255, 0.25) !important;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 0 15px rgba(0, 224, 255, 0.05);
+}
+
+/* Custom scrollbars responsive thumb */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--md-default-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--code-bg);
+  border: 1px solid rgba(255, 31, 122, 0.2);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-pink);
+  box-shadow: var(--text-shadow);
+}
+
+/* Top Navigation Tabs */
+.md-tabs {
+  background-color: var(--md-primary-fg-color) !important;
+  border-bottom: 1px solid rgba(0, 224, 255, 0.15) !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.md-tabs__link--active {
+  color: var(--neon-pink) !important;
+  font-weight: 700 !important;
+}
+
+.md-tabs__link:hover {
+  color: var(--neon-cyan) !important;
+}
+
+/* List item bullets styled as neon points */
+.md-typeset ul {
+  list-style-type: none;
+}
+
+.md-typeset ul li {
+  position: relative;
+  padding-left: 1.5em;
+}
+
+.md-typeset ul li::before {
+  content: "■";
+  position: absolute;
+  left: 0;
+  color: var(--neon-pink);
+  font-size: 0.8em;
+  text-shadow: var(--text-shadow);
+  line-height: 1.6;
+}
